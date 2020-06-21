@@ -29,7 +29,6 @@ gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 
 # Bootstrap
-gem 'devise-bootstrap-views', '~> 1.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
