@@ -1,2 +1,15 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container-login">
+  <% @posts.each do |post| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag post.image_url(:thumb) if post.image.present? %>
+      <h3 class="card-title">タイトル
+        <p><%= post.title %></p>
+      </h3>
+      <p><%= link_to "編集", edit_post_path(post) %>
+        <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？"} %></p>
+      <h3 class="card-text">本文
+        <p> <%= post.content %></p>
+      </h3>
+    </div>
+  <% end %>
+</div>

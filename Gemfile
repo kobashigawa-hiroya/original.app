@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # ログイン機能
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
 
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
