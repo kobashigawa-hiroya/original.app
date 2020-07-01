@@ -29,6 +29,7 @@ gem 'rmagick'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'jquery-rails'
 
 # Bootstrap
 # Use Active Storage variant
