@@ -23,13 +23,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # ログイン機能
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
 
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'jquery-rails'
 
 # Bootstrap
-gem 'devise-bootstrap-views', '~> 1.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
