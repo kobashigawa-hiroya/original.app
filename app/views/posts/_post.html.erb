@@ -1,13 +1,33 @@
-<div id="posts">
-  <div class="card" style="width: 18rem;">
-    <%= image_tag post.image_url(:thumb) if post.image.present? %>
-    <h3 class="card-title">タイトル
+<div class="col-4  border-white" style="height: 400px";>
+  <div class="card" style="height: 400px";>
+    <%= image_tag post.image_url(:thumb) %>
+    <h3 class="card-title"style="height: 400px";>タイトル
       <p><%= post.title %></p>
     </h3>
-    <p><%= link_to "編集", edit_post_path(post) %>
-      <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？"} %></p>
-    <h3 class="card-text">本文
-      <p> <%= post.content %></p>
+    <h3 class="card-text">
+      <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#post-details-modal-<%= post.id %>">
+        投稿
+      </button>
     </h3>
+  </div>
+</div>
+<div class="modal fade" id="post-details-modal-<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="post-modal-title-<%= post.id %>" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="post-modal-title-<%= post.id %>"> title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> <%= post.content %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <p><%= link_to "編集", edit_post_path(post),class:"btn btn-dark" %>
+          <%= link_to "削除", post_path(post),class:"btn btn-warning" ,method: :delete, data: { confirm: "削除しますか？"} %></p>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,7 +1,12 @@
-<div class="container-login">
+<div class="container-login" style="max-width: 1200px;">
   <%= render 'shared/flash_messages' %>
   <%= render 'shared/new' %>
   <hr>
-  <div id="posts" %>
-    <%= render @posts %>
+  <div id="posts">
+    <div class="container">
+      <div class="row">
+        <%= render @posts %>
+      </div>
+    </div>
   </div>
+</div>
