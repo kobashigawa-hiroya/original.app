@@ -1,11 +1,12 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   storage :file
-  process convert: 'jpg'
+  process convert: "jpg"
   # 保存するディレクトリ名
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+
   # thumb バージョン(width 400px x height 200px)
   version :thumb do
     process :resize_to_fit => [400, 200]
@@ -14,8 +15,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %W[jpg jpeg gif png]
   end
+
   # 変換したファイルのファイル名の規則
   def filename
-    "#{Time.zone.now.strftime('%Y%m%d%H%M%S')}.jpg" if original_filename.present?
+    "#{Time.zone.now.strftime("%Y%m%d%H%M%S")}.jpg" if original_filename.present?
+  end
+
+  def default_url(*args)
+    "no image.jpg"
   end
 end
