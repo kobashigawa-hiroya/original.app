@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = current_app.posts #ログインしている人の投稿一覧
     @post = Post.new
+    @welcomtime = current_app.welcom_times
   end
 
   def show

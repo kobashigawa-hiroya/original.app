@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_05_073659) do
+ActiveRecord::Schema.define(version: 2020_07_06_132020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,5 +37,15 @@ ActiveRecord::Schema.define(version: 2020_07_05_073659) do
     t.index ["app_id"], name: "index_posts_on_app_id"
   end
 
+  create_table "welcom_times", force: :cascade do |t|
+    t.string "name"
+    t.datetime "time"
+    t.bigint "app_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id"], name: "index_welcom_times_on_app_id"
+  end
+
   add_foreign_key "posts", "apps"
+  add_foreign_key "welcom_times", "apps"
 end
