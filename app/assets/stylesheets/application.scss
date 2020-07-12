@@ -67,3 +67,21 @@
 .container-login {
   box-sizing: border-box;
 }
+
+.g-calendar {
+  text-align: center;
+}
+
+.g-calendar iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+}
+
+@media (min-width: 768px) {
+
+  .g-calendar iframe {
+    height: 600px;
+  }
+
+}
