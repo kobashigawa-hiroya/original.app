@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :texts
   devise_for :apps
   get "homes/index"
   root "posts#new"
