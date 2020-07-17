@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @posts = current_app.posts #ログインしている人の投稿一覧
     @post = Post.new
     @welcomtime = current_app.welcom_times
+    @posts = Post.all.page(params[:page]).per(5)
   end
 
   def show
