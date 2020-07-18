@@ -1,16 +1,5 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
+ *= require_tree ./autoloads
  *= require_self
  */
 @import "bootstrap/scss/bootstrap";
@@ -90,7 +79,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   }
 }
 
-.pagination > li > a {
+.pagination>li>a {
   border: none;
   /*枠線をなくす*/
   color: #696969;
@@ -98,7 +87,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 }
 
 /* 表示しているページ番号のデザイン */
-.pagination > .active > a {
+.pagination>.active>a {
   background: #93c9ff;
   /*背景の色を変える*/
   border-radius: 15px;
@@ -106,7 +95,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 }
 
 /*ホバー時のデザイン*/
-.pagination > li > a:hover {
+.pagination>li>a:hover {
   border-radius: 15px;
   /*角を丸くする*/
 }
@@ -116,17 +105,21 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 }
 
 .cal_wrapper {
-  max-width: 800px; /* 最大幅 */
-  min-width: 300px; /* 最小幅 */
+  max-width: 800px;
+  /* 最大幅 */
+  min-width: 300px;
+  /* 最小幅 */
   margin: 2.0833% auto;
 }
 
 .googlecal {
   position: relative;
-  padding-bottom: 100%; /* 縦横比 */
+  padding-bottom: 100%;
+  /* 縦横比 */
   height: 0;
   overflow: hidden;
 }
+
 .googlecal iframe {
   position: absolute;
   top: 0;
@@ -136,6 +129,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 }
 
 @media only screen and (min-width: 600px) {
+
   /* 画面幅が600px以上の場合の縦横比の指定 */
   .googlecal {
     padding-bottom: 75%;
