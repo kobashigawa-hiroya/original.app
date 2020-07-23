@@ -1,41 +1,36 @@
-<div>
-  <%# <%= menu.title %>
-  <%# <%= menu.content %>
-</div>
-<div class="card" style="width: 18rem;">
-  <%= image_tag menu.image_url(:thumb) %>
-  <div class="card-body">
-    <h5 class="card-title">メニュー</h5>
-    <p class="card-text"><%= menu.title %></p>
-  </div>
-  <ul class="list-group list-group-flush">
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link"><%= menu.content %></a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+<div class="col-sm-6 col-lg-4 border-white" style="height: 400px";>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag menu.image_url(:thumb) %>
+    <div class="card-body">
+      <h5 class="card-title">メニュー</h5>
+      <p class="card-text"><%= menu.title %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+    </ul>
+    <div class="card-body">
+      <%# <a href="#" class="card-link"><%= menu.content %></a>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#snack-image-modal-<%= menu.id %>">
+      おやつ
+    </button>
+    <div class="modal fade" id="snack-image-modal-<%= menu.id %>" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="snack-title-modal-<%= menu.id %>" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="snack-title-modal">３時のおやつ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= image_tag menu.snack_image_url(:thumb) %>
+            <%= menu.snack_content %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
