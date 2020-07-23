@@ -1,0 +1,6 @@
+<div class="container-login">
+  <h1>投稿詳細</h1>
+  <p>タイトル <%= @menu.title %></p>
+  <p>本文 <%= @menu.content %></p>
+  <%= image_tag @menu.image_url(:thumb) if @menu.image.present? %>
+</div>

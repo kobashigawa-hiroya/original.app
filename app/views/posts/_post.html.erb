@@ -14,7 +14,7 @@
             <%= link_to 'ログアウト', destroy_app_session_path, method: :delete, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "投稿", root_path, class: 'navbar-brand' %>
+            <%= link_to "献立", menus_path, class: 'navbar-brand' %>
           </li>
           <li class="nav-item active">
             <%= button_to "登園", welcomtimes_path, name: 'garden', class:"navbar-brand", method: :post %>
@@ -48,11 +48,11 @@
       <div class="modal-body">
         <p> <%= post.content %></p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <p><%= link_to "編集", edit_post_path(post),class:"btn btn-dark" %>
-          <%= link_to "削除", post_path(post),class:"btn btn-warning" ,method: :delete, data: { confirm: "削除しますか？"} %></p>
-      </div>
+      <p>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+        <%= link_to "編集", edit_post_path(post),class:"btn btn-dark" %>
+        <%= link_to "削除", post_path(post),class:"btn btn-warning" ,method: :delete, data: { confirm: "削除しますか？"} %>
+      </p>
     </div>
   </div>
 </div>

@@ -1,33 +1,33 @@
 <div class="container mt-5">
-  <div class="row">
-    <div class="modal fade" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ModalLabel">新規投稿</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= form_with model: @post, local: true do |form| %>
-              <div class="field">
-                <%= form.label :title %>
-                <%= form.text_field :title %>
-              </div>
-              <div class="field">
-                <%= form.label :content %>
-                <%= form.rich_text_area :content %>
-              </div>
-              <div class="form-group">
-                <%= form.file_field :image %>
-              </div>
+  <div class="modal fade" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">新規投稿</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_with model: @post, local: true do |form| %>
+            <div class="field">
+              <%= form.label :title %>
+              <%= form.text_field :title %>
+            </div>
+            <div class="field">
+              <%= form.label :content %>
+              <%= form.rich_text_area :content %>
+            </div>
+            <div class="form-group">
+              <%= form.file_field :image %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <%= form.submit "投稿する", class: "btn btn-primary "%>
+              <%= form.submit "投稿する", class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
+  </div>
+</div>
