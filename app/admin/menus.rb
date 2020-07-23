@@ -5,12 +5,12 @@ ActiveAdmin.register Menu do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :content, :image
+  # permit_params :title, :content, :image, :app_id
   #
   # or
   #
   # permit_params do
-  #   permitted = [:title, :content, :image]
+  #   permitted = [:title, :content, :image, :app_id]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
