@@ -1,5 +1,5 @@
 ActiveAdmin.register Menu do
-  permit_params :title, :content, :image, :app_id
+  permit_params :title, :content, :image, :snack_image, :snack_content, :app_id
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
