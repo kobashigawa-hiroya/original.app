@@ -3,6 +3,7 @@ class MenusController < ApplicationController
 
   def index
     @menus = Menu.order(id: :asc)
+    @menus = Menu.all.page(params[:page]).per(5)
   end
 
   def new
