@@ -1,14 +1,16 @@
 class ContactsController < ApplicationController
   def index
+    @contact = Contact.new
   end
 
   def create
-    current_app.contacts.create!(contact_params)
+    contact = Contact.create!(contact_params)
+    redirect_to action: :index
   end
 
   private
 
   def contact_params
-    params.require(:contacts).permit(:title, :content)
+    params.require(:contact).permit(:title, :content)
   end
 end

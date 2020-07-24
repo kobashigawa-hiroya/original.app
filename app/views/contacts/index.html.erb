@@ -1,6 +1,6 @@
 <div class="container-login" style="max-width: 1200px">
   <h1>お問合せ</h1>
-  <%= form_with model: contact, local: true do |form| %>
+  <%= form_with model: @contact, local: true do |form| %>
     <div class="field">
       <%= form.label :title %>
       <%= form.text_field :title %>
@@ -15,4 +15,6 @@
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <%= form.submit "投稿する", class: "btn btn-primary "%>
-    <% end %>
+    </div>
+  <% end %>
+</div>
