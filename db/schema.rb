@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_24_055452) do
+ActiveRecord::Schema.define(version: 2020_07_24_064955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,9 @@ ActiveRecord::Schema.define(version: 2020_07_24_055452) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "app_id"
+    t.boolean "my_contact"
+    t.index ["app_id"], name: "index_contacts_on_app_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -136,6 +139,7 @@ ActiveRecord::Schema.define(version: 2020_07_24_055452) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "contacts", "apps"
   add_foreign_key "posts", "apps"
   add_foreign_key "welcom_times", "apps"
 end

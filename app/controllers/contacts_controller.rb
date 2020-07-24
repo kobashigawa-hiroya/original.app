@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   def index
+    
   end
 
   def show
@@ -9,6 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def create
+    
   end
 
   def edit
