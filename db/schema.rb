@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 2020_07_24_064955) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "app_id"
-    t.boolean "my_contact", default: true
+    t.bigint "app_id", null: false
+    t.boolean "my_contact", default: false
     t.index ["app_id"], name: "index_contacts_on_app_id"
   end
 

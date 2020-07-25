@@ -4,7 +4,9 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.create!(contact_params)
+    contact = current_app.contacts.build(contact_params)
+    contact.my_contact = true
+    contact.save!
     redirect_to action: :index
   end
 
