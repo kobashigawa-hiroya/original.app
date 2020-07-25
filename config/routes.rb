@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :texts
   devise_for :apps
-  get "homes/index"
-  root "posts#new"
-  get "menus/index"
+  # get "homes/index"
+  root "posts#index"
   resources :menus
   resources :posts
   resources :welcomtimes, only: [:create, :destroy]
+  resources :contacts, only: [:index, :create]
 end

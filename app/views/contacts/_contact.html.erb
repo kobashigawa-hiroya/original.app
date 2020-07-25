@@ -1,0 +1,13 @@
+<% if contact.my_contact %>
+  <div class="balloon1">
+    <div class="icon"><%= image_tag 'youngman_36.png',size: '100x50'%></div>
+    <%= contact.title %>
+    <%= contact.content %>
+  </div>
+<% else %>
+  <div class="balloon2">
+    <div class="icon"><%= image_tag 'youngwoman_42.png',size: '100x50'%></div>
+    <%= contact.title %>
+    <%= contact.content %>
+  </div>
+<% end %>

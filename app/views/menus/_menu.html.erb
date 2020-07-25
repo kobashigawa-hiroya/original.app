@@ -3,7 +3,15 @@
     <%= image_tag menu.image_url(:thumb) %>
     <div class="card-body">
       <h5 class="card-title">メニュー</h5>
-      <p class="card-text"><%= menu.title %></p>
+      <!-- Default dropright button -->
+      <div class="btn-group dropright">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          詳細
+        </button>
+        <div class="dropdown-menu">
+          <%= simple_format(h menu.content) %>
+        </div>
+      </div>
     </div>
     <ul class="list-group list-group-flush">
     </ul>
@@ -22,8 +30,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= image_tag menu.snack_image_url(:thumb) %>
-            <%= menu.snack_content %>
+            <%= image_tag menu.snack_image_url(:thumb)  %>
+            <%= simple_format(h menu.snack_content) %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
