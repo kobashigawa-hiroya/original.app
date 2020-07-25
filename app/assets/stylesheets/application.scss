@@ -127,7 +127,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   position: absolute;
   right: -110px;
   top: 0;
-  op: 0;
+  // op: 0;
 }
 
 /* 三角アイコン */
@@ -142,9 +142,4 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   border-left: 15px solid palevioletred;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-}
-
-.icon {
-  height: 10px;
-  width: 20px;
 }
