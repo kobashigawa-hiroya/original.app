@@ -5,6 +5,7 @@ class CreateLetters < ActiveRecord::Migration[6.0]
       t.string :content
       t.boolean :like, default: false
       t.references :post, null: false, foreign_key: true
+      t.references :app, null: false, foreign_key: true
 
       t.timestamps
     end

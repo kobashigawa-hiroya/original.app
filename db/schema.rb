@@ -99,8 +99,10 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
     t.string "content"
     t.boolean "like", default: false
     t.bigint "post_id", null: false
+    t.bigint "app_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id"], name: "index_letters_on_app_id"
     t.index ["post_id"], name: "index_letters_on_post_id"
   end
 
@@ -150,6 +152,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts", "apps"
+  add_foreign_key "letters", "apps"
   add_foreign_key "letters", "posts"
   add_foreign_key "posts", "apps"
   add_foreign_key "welcom_times", "apps"

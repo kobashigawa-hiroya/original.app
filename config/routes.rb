@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   # get "homes/index"
   root "posts#index"
   resources :menus
-  resources :posts
+  resources :posts do
+    resource :letters, only: [:create]
+  end
   resources :welcomtimes, only: [:create, :destroy]
   resources :contacts, only: [:index, :create]
-  resources :letters, only: [:index, :create]
 end
