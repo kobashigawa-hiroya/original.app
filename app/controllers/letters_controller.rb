@@ -10,6 +10,8 @@ class LettersController < ApplicationController
   end
 
   def create
+    current_app.letters.create!(letter_params)
+    redirect_to root_path
   end
 
   def edit
@@ -24,6 +26,6 @@ class LettersController < ApplicationController
   private
 
   def letter_params
-    params.require(:letter).permit(:bodytemperature, :content)
+    params.require(:letter).permit(:body_temperature, :content)
   end
 end

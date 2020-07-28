@@ -95,11 +95,13 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
   end
 
   create_table "letters", force: :cascade do |t|
-    t.integer "bodytemperature"
+    t.integer "body_temperature"
     t.string "content"
-    t.integer "app_id"
+    t.boolean "like", default: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_letters_on_post_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -148,6 +150,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts", "apps"
+  add_foreign_key "letters", "posts"
   add_foreign_key "posts", "apps"
   add_foreign_key "welcom_times", "apps"
 end

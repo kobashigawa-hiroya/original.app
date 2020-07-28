@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :welcomtimes, only: [:create, :destroy]
   resources :contacts, only: [:index, :create]
-  resources :letters, only
+  resources :letters, only: [:index, :create]
 end
