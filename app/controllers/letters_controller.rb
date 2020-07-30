@@ -26,6 +26,6 @@ class LettersController < ApplicationController
   private
 
   def letter_params
-    params.require(:letter).permit(:body_temperature, :content)
+    params.require(:letter).permit(:body_temperature, :content).merge params.permit(:post_id)
   end
 end
