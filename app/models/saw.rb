@@ -1,0 +1,2 @@
+class Saw < ApplicationRecord
+end
