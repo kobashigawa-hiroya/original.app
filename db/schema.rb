@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
   create_table "letters", force: :cascade do |t|
     t.float "body_temperature"
     t.string "content"
-    t.boolean "like", default: false
     t.bigint "post_id", null: false
     t.bigint "app_id", null: false
     t.datetime "created_at", precision: 6, null: false
