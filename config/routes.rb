@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :menus
   resources :posts do
-    resource :letters, only: [:create]
+    resources :letters, only: [:create, :update]
   end
   resources :welcomtimes, only: [:create, :destroy]
   resources :contacts, only: [:index, :create]

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @letter = Letter.new
     @welcomtime = current_app.welcom_times
-    @posts = Post.all.page(params[:page]).per(5)
+    @posts = Post.all.page(params[:page]).per(6)
   end
 
   # def show

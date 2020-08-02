@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :app
-  has_one :post
+  has_one :letter
 
   mount_uploader :image, ImageUploader
   validates :title, presence: true, length: { maximum: 50 }

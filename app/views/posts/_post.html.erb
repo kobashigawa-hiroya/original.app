@@ -47,22 +47,27 @@
       </div>
       <div class="modal-body">
         <p> <%= post.content %></p>
-      </div>
-      <p>
-        <div class="dropdown">
-          <p>
-            <div class="text-center">
-              <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                返信
-              </button>
-            </div>
-          </p>
-          <%= render 'letters/letter', post: post %>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <% if post.letter.present? %>
+          <p> <%= post.letter.body_temperature %></p>
+          <p> <%= post.letter.content %></p>
+        </span>
+      <% end %>
+    </div>
+    <p>
+      <div class="dropdown">
+        <p>
+          <div class="text-center">
+            <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              返信
+            </button>
           </div>
+        </p>
+        <%= render 'letters/letter', post: post %>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         </div>
       </div>
-    </p>
-  </div>
+    </div>
+  </p>
+</div>
 </div>
 </div>
