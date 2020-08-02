@@ -29,3 +29,13 @@
     <% end %>
   </div>
 </div>
+<% if post.saws.exists?(app_id: current_app.id) %>
+  <!-- いいね!済み -->
+  <%= image_tag 'images/pnts.jpg' %>
+<% else %>
+  <!-- いいね!していない -->
+  ☆
+<% end %>
+<!-- ***** 以上を追加 ***** -->
+</p>
+<hr>
