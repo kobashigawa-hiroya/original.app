@@ -1,0 +1,31 @@
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <% if post.letter.nil? %>
+      <h1>家庭での様子</h1>
+      <%= form_with model: [post, @letter], local: true do |form| %>
+        <div id="reply1" class="field">
+          <%= form.label :body_temperature, "検温" %>
+          <%= form.text_field :body_temperature %>
+        </div>
+        <div id="reply1"class="form-group">
+          <%= form.label :content, "👶👦👧" %>
+          <%= form.text_area :content, class: "form-control" %>
+          <%= form.submit "投稿する", class: "btn btn-primary "%>
+        </div>
+      <% end %>
+    <% else %>
+      <h1>家庭での様子</h1>
+      <%= form_with model: [post, post.letter], local: true do |form| %>
+        <div id="reply" class="field">
+          <%= form.label :body_temperature, "検温" %>
+          <%= form.text_field :body_temperature %>
+        </div>
+        <div id="reply"class="form-group">
+          <%= form.label :content, "👶👦👧" %>
+          <%= form.text_area :content, class: "form-control" %>
+          <%= form.submit "編集する", class: "btn btn-warning "%>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

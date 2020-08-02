@@ -22,18 +22,18 @@ class MenusController < ApplicationController
 
   def update
     @menu.update!(menu_params)
-    require_to @menu
+    redirect_to @menu
   end
 
   def destroy
     @menu.destroy!
-    require_to @menu
+    redirect_to @menu
   end
 
   private
 
   def set_menu
-    @menu = Menu.find(params[id])
+    @menu = Menu.find(params[:id])
   end
 
   def menu_params

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bodytemperature: 1
+  content: MyString
+  app_id: 1
+
+two:
+  bodytemperature: 1
+  content: MyString
+  app_id: 1

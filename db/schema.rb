@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_24_064955) do
+ActiveRecord::Schema.define(version: 2020_07_27_124202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,19 @@ ActiveRecord::Schema.define(version: 2020_07_24_064955) do
     t.index ["app_id"], name: "index_contacts_on_app_id"
   end
 
+  create_table "letters", force: :cascade do |t|
+    t.float "body_temperature"
+    t.string "content"
+    t.boolean "like", default: false
+    t.bigint "post_id", null: false
+    t.bigint "app_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id"], name: "index_letters_on_app_id"
+    t.index ["post_id", "app_id"], name: "index_letters_on_post_id_and_app_id", unique: true
+    t.index ["post_id"], name: "index_letters_on_post_id"
+  end
+
   create_table "menus", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -140,6 +153,8 @@ ActiveRecord::Schema.define(version: 2020_07_24_064955) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contacts", "apps"
+  add_foreign_key "letters", "apps"
+  add_foreign_key "letters", "posts"
   add_foreign_key "posts", "apps"
   add_foreign_key "welcom_times", "apps"
 end

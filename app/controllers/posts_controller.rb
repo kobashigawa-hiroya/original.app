@@ -2,10 +2,9 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = current_app.posts #ログインしている人の投稿一覧
-    @post = Post.new
+    @letter = Letter.new
     @welcomtime = current_app.welcom_times
-    @posts = Post.all.page(params[:page]).per(5)
+    @posts = Post.order(id: :desc).page(params[:page]).per(6)
   end
 
   # def show
