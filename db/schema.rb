@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
   end
 
   create_table "letters", force: :cascade do |t|
-    t.integer "body_temperature"
+    t.float "body_temperature"
     t.string "content"
     t.boolean "like", default: false
     t.bigint "post_id", null: false
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_124202) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["app_id"], name: "index_letters_on_app_id"
+    t.index ["post_id", "app_id"], name: "index_letters_on_post_id_and_app_id", unique: true
     t.index ["post_id"], name: "index_letters_on_post_id"
   end
 

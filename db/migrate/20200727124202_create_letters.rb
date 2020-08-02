@@ -1,7 +1,7 @@
 class CreateLetters < ActiveRecord::Migration[6.0]
   def change
     create_table :letters do |t|
-      t.integer :body_temperature
+      t.float :body_temperature
       t.string :content
       t.boolean :like, default: false
       t.references :post, null: false, foreign_key: true
@@ -9,5 +9,6 @@ class CreateLetters < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :letters, [:post_id, :app_id], unique: true
   end
 end
