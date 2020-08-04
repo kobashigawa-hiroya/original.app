@@ -31,7 +31,7 @@
 </div>
 <% if post.saws.exists?(app_id: current_app.id) %>
   <%= link_to post_saws_path(post), method: :delete, data: { confirm: "見ましたを削除しますか？" } do %>
-    <%= image_tag ('pnts.jpg') %>
+    <%= image_tag 'pnts.jpg', size: '300x150'  %>
   <% end %>
 <% else %>
   <%= link_to '☆' ,post_saws_path(post), method: :post %>

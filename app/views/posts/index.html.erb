@@ -20,6 +20,9 @@
       <li class="nav-item active">
         <%= button_to "降園", welcomtimes_path, name: 'garden', class:"navbar-brand", method: :post %>
       </li>
+      <li class="nav-item active">
+        <%= link_to 'ログアウト', destroy_app_session_path, method: :delete, class: 'nav-link',data: { confirm: "ログアウトしますか？" }  %>
+      </li>
     </ul>
   </div>
 </nav>
@@ -28,24 +31,20 @@
   <%= render 'shared/new' %>
   <hr>
   <div id="posts">
-    <div class="container">
-      <div class="text-center">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLabel">
-          <i class="far fa-comment"></i> 今日のつぶやき
-        </button>
-      </div>
-      <div class="row">
-        <%= render @posts %>
-      </div>
-      <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmztLc7bq-_cnBnO">お知らせ</a>
-      <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmqEuLo-juA4N6oZ">お知らせ２</a>
-      <%= paginate @posts %>
-      <p>年間行事</p>
-      <div class="cal_wapper">
-        <div class="googlecal">
-          <iframe src="https://calendar.google.com/calendar/embed?src=3v7llda6u6j80rvvjvludk244k%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-      </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLabel">
+        <i class="far fa-comment"></i> 今日のつぶやき
+      </button>
     </div>
+    <div class="row">
+      <%= render @posts %>
+    </div>
+    <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmztLc7bq-_cnBnO">お知らせ</a>
+    <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmqEuLo-juA4N6oZ">お知らせ２</a>
+    <%= paginate @posts %>
+    <p>年間行事</p>
+  </div>
+  <div class="googleCalendar">
+    <iframe src="https://calendar.google.com/calendar/embed?src=3v7llda6u6j80rvvjvludk244k%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
 </div>
