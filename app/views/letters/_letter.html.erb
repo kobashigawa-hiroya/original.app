@@ -30,12 +30,11 @@
   </div>
 </div>
 <% if post.saws.exists?(app_id: current_app.id) %>
-  <!-- いいね!済み -->
-  <%= image_tag 'images/pnts.jpg' %>
+  <%= link_to post_saws_path(post), method: :delete, data: { confirm: "見ましたを削除しますか？" } do %>
+    <%= image_tag ('pnts.jpg') %>
+  <% end %>
 <% else %>
-  <!-- いいね!していない -->
-  ☆
+  <%= link_to '☆' ,post_saws_path(post), method: :post %>
 <% end %>
-<!-- ***** 以上を追加 ***** -->
 </p>
 <hr>
