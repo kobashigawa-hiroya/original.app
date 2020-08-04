@@ -63,18 +63,11 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   box-sizing: border-box;
 }
 
-.g-calendar {
-  text-align: center;
-}
-
-.g-calendar iframe {
+.googleCalendar iframe {
   width: 100%;
-  max-width: 800px;
   height: 400px;
-}
 
-@media (min-width: 768px) {
-  .g-calendar iframe {
+  @media all and (min-width: 768px) {
     height: 600px;
   }
 }
@@ -87,7 +80,6 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   color: black;
   background-color: navajowhite;
   margin-left: 110px;
-  word-break: break-all;
   /* 左に余白を設ける */
 }
 
@@ -120,8 +112,10 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   color: black;
   background-color: palevioletred;
   margin-right: 110px;
+
   /* 右に余白を設ける */
 }
+
 
 /* 画像 - 絶対配置で右上に配置 */
 .balloon2 .icon {
@@ -160,8 +154,4 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 #scroll_box::-webkit-scrollbar-track {
   border-radius: 5px;
   box-shadow: 0 0 4px #aaa inset;
-}
-
-p {
-  word-wrap: break-word;
 }

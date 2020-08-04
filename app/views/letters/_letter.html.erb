@@ -5,7 +5,7 @@
       <%= form_with model: [post, @letter], local: true do |form| %>
         <div id="reply1" class="field">
           <%= form.label :body_temperature, "検温" %>
-          <%= form.text_field :body_temperature %>
+          <%= form.number_field :body_temperature, in: 34.0..44.0, step: 0.1 %>
         </div>
         <div id="reply1"class="form-group">
           <%= form.label :content, "👶👦👧" %>
@@ -18,7 +18,7 @@
       <%= form_with model: [post, post.letter], local: true do |form| %>
         <div id="reply" class="field">
           <%= form.label :body_temperature, "検温" %>
-          <%= form.text_field :body_temperature %>
+          <%= form.number_field :body_temperature, in: 34.0..44.0, step: 0.1 %>
         </div>
         <div id="reply"class="form-group">
           <%= form.label :content, "👶👦👧" %>
@@ -29,3 +29,12 @@
     <% end %>
   </div>
 </div>
+<% if post.saws.exists?(app_id: current_app.id) %>
+  <%= link_to post_saws_path(post), method: :delete, data: { confirm: "見ましたを削除しますか？" } do %>
+    <%= image_tag 'pnts.jpg', size: '300x150'  %>
+  <% end %>
+<% else %>
+  <%= link_to '☆' ,post_saws_path(post), method: :post %>
+<% end %>
+</p>
+<hr>

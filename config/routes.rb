@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   end
   resources :welcomtimes, only: [:create, :destroy]
   resources :contacts, only: [:index, :create]
+  resources :posts do
+    resource :saws, only: [:create, :destroy]
+  end
 end

@@ -3,7 +3,6 @@ class CreateLetters < ActiveRecord::Migration[6.0]
     create_table :letters do |t|
       t.float :body_temperature
       t.string :content
-      t.boolean :like, default: false
       t.references :post, null: false, foreign_key: true
       t.references :app, null: false, foreign_key: true
 
