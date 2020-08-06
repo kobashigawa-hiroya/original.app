@@ -1,0 +1,2 @@
+class Adsence < ApplicationRecord
+end
