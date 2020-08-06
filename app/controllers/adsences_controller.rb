@@ -6,6 +6,8 @@ class AdsencesController < ApplicationController
   end
 
   def create
+    current_app.adsences.create!(adsence_params)
+    redirect_to action: :index
   end
 
   def edit
