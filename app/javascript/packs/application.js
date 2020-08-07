@@ -19,3 +19,14 @@ require("@fortawesome/fontawesome-free/js/all")
 //= require jquery_ujs
 require("trix")
 require("@rails/actiontext")
+
+// カレンダー
+require('flatpickr')
+require('flatpickr/dist/l10n/ja')
+
+document.addEventListener("turbolinks:load", () => {
+  flatpickr.localize(flatpickr.l10ns.ja)
+  const absenceDate = flatpickr("#absence-date", {
+
+  })
+})

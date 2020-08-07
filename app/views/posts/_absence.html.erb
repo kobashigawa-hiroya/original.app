@@ -1,21 +1,30 @@
+<div class="text-center">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#absenceModal">
+    <i class="far fa-comment"></i> 欠席届
+  </button>
+</div>
 <div class="container mt-5">
-  <div class="modal fade" id="exampleModalLabel" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal fade" id="absenceModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">新規投稿</h5>
+          <h5 class="modal-title" id="ModalLabel">欠席届け</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <%= form_with model: @post, local: true do |form| %>
+          <%= form_with model: @absence, local: true do |form| %>
             <div class="field">
-              <%= form.label :title %>
-              <%= form.text_field :title %>
+              <%= form.label :date , "日付"%>
+              <%= form.text_field :date, id: "absence-date" %>
             </div>
             <div class="field">
-              <%= form.label :content %>
+              <%= form.label :title ,"理由"%>
+              <%= form.select :title, @absence_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :content,"症状" %>
               <%= form.rich_text_area :content %>
             </div>
             <div class="form-group">

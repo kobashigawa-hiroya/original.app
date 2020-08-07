@@ -6,7 +6,8 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <%= link_to "投稿一覧", posts_path, class: 'navbar-brand' %>
+        <%= link_to "お便り帳", posts_path, class: 'navbar-brand' %>
+        <i class="fas fa-envelope-open-text"></i>
       </li>
       <li class="nav-item active">
         <%= link_to "お問合せ", contacts_path, class: 'nav-link' %>
@@ -26,16 +27,12 @@
     </ul>
   </div>
 </nav>
+<p class="my-4"></p>
 <div class="container-login" style="max-width: 1200px;">
   <%= render 'shared/flash_messages' %>
-  <%= render 'shared/new' %>
   <hr>
   <div id="posts">
-    <div class="text-center">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLabel">
-        <i class="far fa-comment"></i> 今日のつぶやき
-      </button>
-    </div>
+    <%= render 'absence' %>
     <div class="row">
       <%= render @posts %>
     </div>
@@ -47,4 +44,5 @@
   <div class="googleCalendar">
     <iframe src="https://calendar.google.com/calendar/embed?src=3v7llda6u6j80rvvjvludk244k%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
+</div>
 </div>
