@@ -27,6 +27,11 @@ require('flatpickr/dist/l10n/ja')
 document.addEventListener("turbolinks:load", () => {
   flatpickr.localize(flatpickr.l10ns.ja)
   const absenceDate = flatpickr("#absence-date", {
-
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    // disableMobile: true,
   })
+
+
+
+
 })

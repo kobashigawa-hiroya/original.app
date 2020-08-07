@@ -1,24 +1,25 @@
 <header>
   <nav class="navbar navbar-expand navbar-light">
-    <%= link_to "投稿", root_path, class: 'navbar-brand' %>
-    <%= link_to "投稿一覧", posts_path, class: 'navbar-brand' %>
+    <%= link_to "お便り帳", posts_path, class: 'navbar-brand' %>
     <ul class="navbar-nav">
       <% if app_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "献立", menus_path, class: 'navbar-brand' %>
+          <li class="nav-item active">
+            <%= link_to 'アカウント編集', edit_app_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'ログアウト', destroy_app_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+        </div>
+      <% else %>
         <li class="nav-item active">
-          <%= link_to 'アカウント編集', edit_app_registration_path, class: 'nav-link' %>
+          <%= link_to "新規登録", new_app_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
-          <%= link_to 'ログアウト', destroy_app_session_path, method: :delete, class: 'nav-link' %>
+          <%= link_to "ログイン", new_app_session_path, class: 'nav-link' %>
         </li>
-      </div>
-    <% else %>
-      <li class="nav-item active">
-        <%= link_to "新規登録", new_app_registration_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to "ログイン", new_app_session_path, class: 'nav-link' %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+      <% end %>
+    </ul>
+  </div>
 </header>
