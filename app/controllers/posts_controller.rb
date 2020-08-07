@@ -5,19 +5,23 @@ class PostsController < ApplicationController
     @letter = Letter.new
     @welcomtime = current_app.welcom_times
     @posts = Post.order(id: :desc).page(params[:page]).per(6)
+    @absence_list = Absence::ABSENCE_LIST.map { |title| [title, title] }
+    @absence = Absence.new
   end
 
   # def show
   # end
 
-  # def new
-  #   @post = Post.new
-  # end
+  def new
+    @post = Post.new
+    @absence = Absence.new
+  end
 
-  # def create
-  #   current_app.posts.create!(post_params)
-  #   redirect_to action: :index
-  # end
+  def create
+    @absence.save!(absences_params)
+    # current_app.posts.create!(post_params)
+    # redirect_to action: :index
+  end
 
   # def edit
   # end
@@ -46,4 +50,7 @@ class PostsController < ApplicationController
   # def post_params
   #   params.require(:post).permit(:title, :content, :image)
   # end
+  def absences_params
+    params.require(:absences).permit(:title, :content, :app_id)
+  end
 end

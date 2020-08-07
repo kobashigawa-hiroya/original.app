@@ -1,4 +1,5 @@
 /*
+ *= require flatpickr
  *= require_tree ./autoloads
  *= require_self
  */
@@ -92,7 +93,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 /* 三角アイコン */
 .balloon1::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 0;
@@ -116,7 +117,6 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   /* 右に余白を設ける */
 }
 
-
 /* 画像 - 絶対配置で右上に配置 */
 .balloon2 .icon {
   position: absolute;
@@ -127,7 +127,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
 /* 三角アイコン */
 .balloon2::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 0;

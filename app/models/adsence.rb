@@ -1,2 +1,0 @@
-class Adsence < ApplicationRecord
-end
