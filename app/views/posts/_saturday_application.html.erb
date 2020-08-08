@@ -1,0 +1,42 @@
+<div class="text-center">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saturdayModal">
+    <i class="far fa-comment"></i> 土曜申請書
+  </button>
+</div>
+<div class="container mt-5">
+  <div class="modal fade" id="saturdayModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">土曜申請書</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_with model: @absence, local: true do |form| %>
+            <div class="field">
+              <%= form.label :date , "日付"%>
+              <%= form.text_field :date, id: "absence-date" %>
+            </div>
+            <div class="field">
+              <%= form.label :title ,"理由"%>
+              <%= form.select :title, @absence_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :content,"症状" %>
+              <%= form.rich_text_area :content %>
+            </div>
+            <div class="form-group">
+              <%= form.file_field :image %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= form.submit "投稿する", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
