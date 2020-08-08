@@ -1,14 +1,14 @@
 <div class="text-center">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saturdayModal">
+  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#saturdayModal">
     <i class="far fa-comment"></i> 土曜申請書
   </button>
 </div>
 <div class="container mt-5">
-  <div class="modal fade" id="saturdayModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal fade" id="saturdayModal" tabindex="-1" role="dialog" aria-labelledby="saturdayModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">土曜申請書</h5>
+          <h5 class="modal-title" id="saturdayModalLabel">土曜申請書</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -17,14 +17,96 @@
           <%= form_with model: @saturday_application, local: true do |form| %>
             <div class="field">
               <%= form.label :date , "日付"%>
-              <%= form.text_field :date, id: "absence-date" %>
+              <div class="form-row">
+                <div class="col-5">
+                  <%= form.text_field :date, id: "saturday", class: "form-control" %>
+                </div>
+                <div class="col">
+                  <%= form.text_field :start_time, id: "saturday-start",class:"form-control" %>
+                </div>
+                <div class="d-flex align-items-center">〜</div>
+                <div class="col"><%= form.text_field :end_time, id: "saturday-end",class:"form-control" %>
+                </div>
+              </div>
             </div>
             <div class="field">
               <%= form.label :content ,"理由"%>
               <%= form.select :content, @saturday_application_list, {}, class: "custom-select" %>
             </div>
             <div class="field">
-              <%= form.label :content,"症状" %>
+              <%= form.label :date , "日付"%>
+              <div class="form-row">
+                <div class="col-5">
+                  <%= form.text_field :date, id: "saturday", class: "form-control" %>
+                </div>
+                <div class="col">
+                  <%= form.text_field :start_time, id: "saturday-start",class:"form-control" %>
+                </div>
+                <div class="d-flex align-items-center">〜</div>
+                <div class="col"><%= form.text_field :end_time, id: "saturday-end",class:"form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <%= form.label :content ,"理由"%>
+              <%= form.select :content, @saturday_application_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :date , "日付"%>
+              <div class="form-row">
+                <div class="col-5">
+                  <%= form.text_field :date, id: "saturday", class: "form-control" %>
+                </div>
+                <div class="col">
+                  <%= form.text_field :start_time, id: "saturday-start",class:"form-control" %>
+                </div>
+                <div class="d-flex align-items-center">〜</div>
+                <div class="col"><%= form.text_field :end_time, id: "saturday-end",class:"form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <%= form.label :content ,"理由"%>
+              <%= form.select :content, @saturday_application_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :date , "日付"%>
+              <div class="form-row">
+                <div class="col-5">
+                  <%= form.text_field :date, id: "saturday", class: "form-control" %>
+                </div>
+                <div class="col">
+                  <%= form.text_field :start_time, id: "saturday-start",class:"form-control" %>
+                </div>
+                <div class="d-flex align-items-center">〜</div>
+                <div class="col"><%= form.text_field :end_time, id: "saturday-end",class:"form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <%= form.label :content ,"理由"%>
+              <%= form.select :content, @saturday_application_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :date , "日付"%>
+              <div class="form-row">
+                <div class="col-5">
+                  <%= form.text_field :date, id: "saturday", class: "form-control" %>
+                </div>
+                <div class="col">
+                  <%= form.text_field :start_time, id: "saturday-start",class:"form-control" %>
+                </div>
+                <div class="d-flex align-items-center">〜</div>
+                <div class="col"><%= form.text_field :end_time, id: "saturday-end",class:"form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <%= form.label :content ,"理由"%>
+              <%= form.select :content, @saturday_application_list, {}, class: "custom-select" %>
+            </div>
+            <div class="field">
+              <%= form.label :content,"詳細" %>
               <%= form.rich_text_area :content %>
             </div>
             <div class="modal-footer">

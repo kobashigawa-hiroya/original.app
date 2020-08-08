@@ -6,7 +6,6 @@ class SaturdayApplicationsController < ApplicationController
   end
 
   def create
-    binding.pry
     current_app.saturday_applications.create!(saturday_applications_params)
     redirect_to root_path, notice: "土曜申請を送信しました！"
   end

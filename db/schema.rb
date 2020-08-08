@@ -137,9 +137,10 @@ ActiveRecord::Schema.define(version: 2020_08_08_000353) do
 
   create_table "saturday_applications", force: :cascade do |t|
     t.time "start_time"
+    t.string "title", default: "その他"
     t.time "end_time"
     t.string "content"
-    t.date "date"
+    t.date "date", null: false
     t.integer "app_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

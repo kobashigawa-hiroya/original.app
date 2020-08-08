@@ -25,8 +25,58 @@ require('flatpickr')
 require('flatpickr/dist/l10n/ja')
 
 document.addEventListener("turbolinks:load", () => {
+  // カレンダーを日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
-  const absenceDate = flatpickr("#absence-date", {
-
+  // 欠席届けでカレンダーを使用
+  flatpickr("#absence-date", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    mode: "multiple",
+    dateFormat: "Y-m-d",
+    minDate: "7:00",
+    maxDate: "18:30",
   })
+
+})
+document.addEventListener("turbolinks:load", () => {
+  // カレンダーを日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+  // 欠席届けでカレンダーを使用
+  flatpickr("#saturday", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    mode: "multiple",
+    dateFormat: "Y-m-d",
+  })
+
+})
+document.addEventListener("turbolinks:load", () => {
+  // カレンダーを日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+  // 欠席届けでカレンダーを使用
+  flatpickr("#saturday-start", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    minDate: "7:00",
+    maxDate: "18:00",
+  })
+
+})
+document.addEventListener("turbolinks:load", () => {
+  // カレンダーを日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+  // 欠席届けでカレンダーを使用
+  flatpickr("#saturday-end", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    minDate: "7:00",
+    maxDate: "18:00",
+  })
+
 })
