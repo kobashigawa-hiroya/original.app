@@ -14,7 +14,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= form_with model: @saturday_application, local: true do |form| %>
+          <%= form_with model: @saturday_applications, local: true do |form| %>
             <div class="field">
               <%= form.label :date , "日付"%>
               <%= form.text_field :date, id: "absence-date" %>
@@ -26,9 +26,6 @@
             <div class="field">
               <%= form.label :content,"症状" %>
               <%= form.rich_text_area :content %>
-            </div>
-            <div class="form-group">
-              <%= form.file_field :image %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

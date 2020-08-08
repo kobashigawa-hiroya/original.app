@@ -7,8 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.order(id: :desc).page(params[:page]).per(6)
     @absence_list = Absence::ABSENCE_LIST.map { |title| [title, title] }
     @absence = Absence.new
-    @saturday_application = Saturday_Application.new
-    @saturday_application_list = Saturday_Application::SATURDAY_APPLICATION_LIST.map { |content| [content, content] }
+    @saturday_application = SaturdayApplication.new
+    @saturday_application_list = SaturdayApplication::SATURDAY_APPLICATION_LIST.map { |content| [content, content] }
   end
 
   # def show
