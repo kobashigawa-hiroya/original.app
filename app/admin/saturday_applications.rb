@@ -1,5 +1,5 @@
 ActiveAdmin.register SaturdayApplication do
-  permit_params :time, :content, :image, :app_id
+  permit_params :start_time, :end_time, :content, :date, :app_id
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

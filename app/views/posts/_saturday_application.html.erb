@@ -14,7 +14,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= form_with model: @saturday_applications, local: true do |form| %>
+          <%= form_with model: @saturday_application, local: true do |form| %>
             <div class="field">
               <%= form.label :date , "日付"%>
               <%= form.text_field :date, id: "absence-date" %>

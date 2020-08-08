@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @absence = Absence.new
-    @saturday_application = Saturday_application.new
+    @saturday_application = SaturdayApplication.new
   end
 
   def create

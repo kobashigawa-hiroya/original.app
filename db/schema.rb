@@ -136,7 +136,8 @@ ActiveRecord::Schema.define(version: 2020_08_08_000353) do
   end
 
   create_table "saturday_applications", force: :cascade do |t|
-    t.time "time"
+    t.time "start_time"
+    t.time "end_time"
     t.string "content"
     t.date "date"
     t.integer "app_id"
