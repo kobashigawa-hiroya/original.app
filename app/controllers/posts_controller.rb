@@ -57,4 +57,8 @@ class PostsController < ApplicationController
   def absences_params
     params.require(:absences).permit(:title, :content, :app_id)
   end
+
+  def saturday_applications_params
+    params.require(:saturday_applications).permit(:title, :content, :start_time, :end_time, :date, :app_id)
+  end
 end

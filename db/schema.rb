@@ -139,7 +139,6 @@ ActiveRecord::Schema.define(version: 2020_08_08_000353) do
     t.time "start_time"
     t.string "title", default: "その他"
     t.time "end_time"
-    t.string "content"
     t.date "date", null: false
     t.integer "app_id"
     t.datetime "created_at", precision: 6, null: false

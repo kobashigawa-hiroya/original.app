@@ -42,7 +42,7 @@ document.addEventListener("turbolinks:load", () => {
   // カレンダーを日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
-  flatpickr("#saturday", {
+  flatpickr(".saturday", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
     mode: "multiple",
@@ -54,7 +54,7 @@ document.addEventListener("turbolinks:load", () => {
   // カレンダーを日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
-  flatpickr("#saturday-start", {
+  flatpickr(".saturday-start", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
     enableTime: true,
@@ -69,7 +69,7 @@ document.addEventListener("turbolinks:load", () => {
   // カレンダーを日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
-  flatpickr("#saturday-end", {
+  flatpickr(".saturday-end", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
     enableTime: true,
