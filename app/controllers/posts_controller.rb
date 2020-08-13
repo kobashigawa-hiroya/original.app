@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.order(id: :desc).page(params[:page]).per(6)
     @absence_list = Absence::ABSENCE_LIST.map { |title| [title, title] }
     @absence = Absence.new
+    @saturday_application = SaturdayApplication.new
+    @saturday_application_list = SaturdayApplication::SATURDAY_APPLICATION_LIST.map { |title| [title, title] }
   end
 
   # def show
@@ -15,10 +17,12 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @absence = Absence.new
+    @saturday_application = SaturdayApplication.new
   end
 
   def create
     @absence.save!(absences_params)
+    @saturday_application.save!(saturday_application_params)
     # current_app.posts.create!(post_params)
     # redirect_to action: :index
   end
@@ -52,5 +56,9 @@ class PostsController < ApplicationController
   # end
   def absences_params
     params.require(:absences).permit(:title, :content, :app_id)
+  end
+
+  def saturday_applications_params
+    params.require(:saturday_applications).permit(:title, :content, :start_time, :end_time, :date, :app_id)
   end
 end

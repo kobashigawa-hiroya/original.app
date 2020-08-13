@@ -31,8 +31,11 @@
 <div class="container-login" style="max-width: 1200px;">
   <%= render 'shared/flash_messages' %>
   <hr>
+  <div class="d-flex justify-content-end ">
+    <div class="p-2 "><%= render 'absence' %></div>
+    <div class="p-2 "><%= render 'saturday_application' %></div>
+  </div>
   <div id="posts">
-    <%= render 'absence' %>
     <div class="row">
       <%= render @posts %>
     </div>
