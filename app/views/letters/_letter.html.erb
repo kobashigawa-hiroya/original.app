@@ -10,6 +10,7 @@
         <div id="reply1"class="form-group">
           <%= form.label :content, "👶👦👧" %>
           <%= form.text_area :content, class: "form-control" %>
+          <hr>
           <%= form.submit "投稿する", class: "btn btn-primary "%>
         </div>
       <% end %>
@@ -22,19 +23,20 @@
         </div>
         <div id="reply"class="form-group">
           <%= form.label :content, "👶👦👧" %>
-          <%= form.text_area :content, class: "form-control" %>
+          <%= form.text_area :content, class: "form-control " %>
+          <hr>
           <%= form.submit "編集する", class: "btn btn-warning "%>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
-<% if post.saws.exists?(app_id: current_app.id) %>
-  <%= link_to post_saws_path(post), method: :delete, data: { confirm: "見ましたを削除しますか？" } do %>
-    <%= image_tag 'pnts.jpg', size: '300x150'  %>
+<div id="saw-<%= post.id %>">
+  <% if post.saws.exists?(app_id: current_app.id) %>
+    <%= render "saws/saw", post: post %>
+  <% else %>
+    <%= render "saws/unsaw", post: post %>
   <% end %>
-<% else %>
-  <%= link_to '☆' ,post_saws_path(post), method: :post %>
-<% end %>
+</div>
 </p>
 <hr>

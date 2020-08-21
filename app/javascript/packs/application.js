@@ -17,6 +17,10 @@ require("@fortawesome/fontawesome-free/js/all")
 // const imagePath = (name) => images(name, true)
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
+//= require cropper.min.js
+//= require jquery.ui.widget
+//= require jquery.ui.droppable
 require("trix")
 require("@rails/actiontext")
 
@@ -78,5 +82,24 @@ document.addEventListener("turbolinks:load", () => {
     minDate: "7:00",
     maxDate: "18:00",
   })
+  // document.getElementById("hidden1").style.display = "none";
+  // document.getElementById("hidden2").style.display = "none";
+
+  // document.getElementById("checkbox1").checked;
+  // document.getElementById("checkbox2").checked;
+  // var hidden1 = document.getElementById("#hidden1");
+  // var hidden2 = document.getElementById("#hidden2");
+  // if (check1 == true) {
+  //   hidden1.style.display = "block";
+  // } else {
+  //   hidden1.style.display = "none";
+  // }
+  // if (check2 == true) {
+  //   hidden2.style.display = "none";
+  //   debugger
+  // }
+  // document.getElementById('saw').addEventListener('click', e => {
+  //   e.hidden;
+
 
 })
