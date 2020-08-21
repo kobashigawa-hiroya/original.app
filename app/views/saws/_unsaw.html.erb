@@ -1,1 +1,3 @@
-<%= link_to '☆' ,post_saws_path(post), method: :post, remote: true %>
+<%= link_to  post_saws_path(post), method: :post, remote: true do %>
+  <i class="far fa-smile fa-3x"></i>
+<% end %>
