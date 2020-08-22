@@ -14,5 +14,7 @@ ActiveAdmin.register Contact do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-
+  # def template
+  # ApplicationController.renderer.render partial: "contacts/contact", locals: { contact: self }
+  # end
 end

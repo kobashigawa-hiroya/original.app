@@ -1,5 +1,6 @@
 class SaturdayApplicationsController < ApplicationController
   def index
+    @saturday_params = SaturdayApplications.find(params)
   end
 
   def new

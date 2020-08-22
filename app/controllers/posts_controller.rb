@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.order(id: :desc).page(params[:page]).per(6)
     @absence_list = Absence::ABSENCE_LIST.map { |title| [title, title] }
     @absence = Absence.new
+    date_range = Date.current.beginning_of_month..Float::INFINITY
+    @saturday_applications = current_app.saturday_applications.where(date: date_range).order(date: :asc)
     @saturday_application = SaturdayApplication.new
     @saturday_application_list = SaturdayApplication::SATURDAY_APPLICATION_LIST.map { |title| [title, title] }
   end
