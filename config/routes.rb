@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :posts do
     resource :saws, only: [:create, :destroy]
   end
-  resources :absences, only: [:index, :create, :new]
+  resources :absences, only: [:index, :create, :new, :destroy, :update, :edit]
   resources :saturday_applications, only: [:index, :create, :new]
 end

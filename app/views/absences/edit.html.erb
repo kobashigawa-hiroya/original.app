@@ -1,2 +1,21 @@
-<h1>Adsences#edit</h1>
-<p>Find me in app/views/adsences/edit.html.erb</p>
+ 
+<div class="container border p-3">
+  <h1>編集フォーム</h1>
+  <%= form_with model: @absence, local: true do |form| %>
+    <div class="field">
+      <%= form.label :title ,"理由"%>
+      <%= form.select :title, @absence_list, {}, class: "custom-select" %>
+    </div>
+    <div>
+      <%= form.label :content, "内容" %>
+      <%= form.text_field :content %>
+    </div>
+    <div>
+      <%= form.label :content, "内容" %>
+      <%= form.text_field :content %>
+    </div>
+    <div>
+      <%= form.submit "送信" %>
+    </div>
+  <% end %>
+</div>

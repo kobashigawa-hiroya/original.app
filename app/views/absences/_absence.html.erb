@@ -1,17 +1,11 @@
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col2">日付</th>
-      <th scope="col2">症状</th>
-      <th scope="col2">詳細</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= absence.date %></td>
-      <td><%= absence.title %></td>
-      <td><%= absence.content %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<tr>
+  <td><%= absence.date %></td>
+  <td><%= absence.title %></td>
+  <td><%= simple_format(absence.content) %></td>
+  <td><%= link_to edit_absence_path(absence),  class:"btn btn-outline-info" do %>
+      <i class="fas fa-file-alt"></i>
+    <% end %>
+    <%= link_to absence, class: 'btn btn-primary', method: :delete, data: { confirm: "削除しますか？"} do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %></td>
+</tr>

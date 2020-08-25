@@ -38,10 +38,11 @@ class PostsController < ApplicationController
   #   redirect_to (post_params), notice: "更新しました"
   # end
 
-  # def destroy
-  #   @post.destroy!
-  #   redirect_to @post, alert: "削除しました"
-  # end
+  def destroy
+    @post.destroy!
+    @absence.destroy!
+    redirect_to posts alert: "削除しました"
+  end
 
   # private
 
