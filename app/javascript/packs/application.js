@@ -82,6 +82,19 @@ document.addEventListener("turbolinks:load", () => {
     minDate: "7:00",
     maxDate: "18:00",
   })
+
+})
+document.addEventListener("turbolinks:load", () => {
+  // カレンダーを日本語化
+  flatpickr.localize(flatpickr.l10ns.ja)
+  // 欠席届けでカレンダーを使用
+  flatpickr("#absence-date", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    minDate: "today"
+
+  })
+
+
   // document.getElementById("hidden1").style.display = "none";
   // document.getElementById("hidden2").style.display = "none";
 

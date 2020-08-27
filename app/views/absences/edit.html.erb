@@ -1,18 +1,21 @@
- 
 <div class="container border p-3">
   <h1>編集フォーム</h1>
   <%= form_with model: @absence, local: true do |form| %>
     <div class="field">
+      <%= form.label :date , "日付"%>
+      <%= form.text_field :date, id: "absence-date" %>
+    </div>
+    <div class="field">
       <%= form.label :title ,"理由"%>
       <%= form.select :title, @absence_list, {}, class: "custom-select" %>
     </div>
-    <div>
-      <%= form.label :content, "内容" %>
-      <%= form.text_field :content %>
+    <% binding.pry %>
+    <div class="field">
+      <%= form.label :content,"症状" %>
+      <%= form.rich_text_area :content %>
     </div>
-    <div>
-      <%= form.label :content, "内容" %>
-      <%= form.text_field :content %>
+    <div class="form-group">
+      <%= form.file_field :image %>
     </div>
     <div>
       <%= form.submit "送信" %>
