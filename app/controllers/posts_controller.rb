@@ -30,8 +30,9 @@ class PostsController < ApplicationController
     # redirect_to action: :index
   end
 
-  # def edit
-  # end
+  def edit
+    @saturday_application_list = SaturdayApplication::SATURDAY_APPLICATION_LIST.map { |title| [title, title] }
+  end
 
   # def update
   #   @post.update!(post_params)

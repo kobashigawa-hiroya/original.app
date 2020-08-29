@@ -1,16 +1,12 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">日付</th>
-      <th scope="col">理由</th>
-      <th scope="col">登園時間</th>
-      <th scope="col">お迎え時間</th>
-    </tr>
-  </thead>
-  <tbody>
-    <td><%= saturday_application.date %></td>
-    <td><%= saturday_application.title %></td>
-    <td><%= saturday_application.start_time %></td>
-    <td><%= saturday_application.end_time %></td>
-  </tbody>
-</table>
+<tr>
+  <td><%= l saturday_application.date %></td>
+  <td><%= saturday_application.title %></td>
+  <td><%= l saturday_application.start_time, format: :short %></td>
+  <td><%= l saturday_application.end_time, format: :short %></td>
+  <td><%= link_to edit_saturday_application_path(saturday_application),  class:"btn btn-outline-info" do %>
+      <i class="fas fa-file-alt"></i>
+    <% end %>
+    <%= link_to saturday_application, class: 'btn btn-primary', method: :delete, data: { confirm: "削除しますか？" } do %>
+      <i class="far fa-trash-alt"></i></td>
+  <% end %>
+</tr>

@@ -29,34 +29,45 @@ require('flatpickr')
 require('flatpickr/dist/l10n/ja')
 
 document.addEventListener("turbolinks:load", () => {
+  const createSaturdayDates = () => {
+    let saturdayDates = []
+    var today = new Date()
+    // 今月1日
+    let startDate = new Date(today.getFullYear(), today.getMonth(), 1)
+    // 来月末
+    let endDate = new Date(today.getFullYear(), today.getMonth() + 2, 0)
+    for (var date = startDate; date < endDate; date.setDate(date.getDate() + 1)) {
+      if (date.getDay() === 6) {
+        // 土曜日のみ配列に代入
+        // 日付オブジェクトを作り直さないと、全部来月末の配列になってしまう
+        saturdayDates.push(new Date(date.getTime()))
+      }
+    }
+    return saturdayDates
+  }
+
+  const saturdayDates = createSaturdayDates()
+
   // カレンダーを日本語化
   flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
   flatpickr("#absence-date", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
-    mode: "multiple",
     dateFormat: "Y-m-d",
-    minDate: "7:00",
-    maxDate: "18:30",
+    minDate: "today"
   })
 
-})
-document.addEventListener("turbolinks:load", () => {
-  // カレンダーを日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
   flatpickr(".saturday", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
     disableMobile: true,
     mode: "multiple",
     dateFormat: "Y-m-d",
+    minDate: "today",
+    enable: saturdayDates
   })
 
-})
-document.addEventListener("turbolinks:load", () => {
-  // カレンダーを日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
   flatpickr(".saturday-start", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
@@ -68,10 +79,6 @@ document.addEventListener("turbolinks:load", () => {
     maxDate: "18:00",
   })
 
-})
-document.addEventListener("turbolinks:load", () => {
-  // カレンダーを日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
   flatpickr(".saturday-end", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
@@ -83,15 +90,20 @@ document.addEventListener("turbolinks:load", () => {
     maxDate: "18:00",
   })
 
-})
-document.addEventListener("turbolinks:load", () => {
-  // カレンダーを日本語化
-  flatpickr.localize(flatpickr.l10ns.ja)
   // 欠席届けでカレンダーを使用
-  flatpickr("#absence-date", {
+  flatpickr("#absence-edit-date", {
     // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    dateFormat: "Y-m-d",
     minDate: "today"
-
+  })
+  // 土曜申請でカレンダーを使用
+  flatpickr("#saturday_application-edit-date", {
+    // スマートフォンでもカレンダーに「flatpickr」を使用
+    disableMobile: true,
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    enable: saturdayDates
   })
 
 

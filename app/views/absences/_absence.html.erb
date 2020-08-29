@@ -1,7 +1,7 @@
 <tr>
-  <td><%= absence.date %></td>
+  <td><%= l absence.date, format: :long %></td>
   <td><%= absence.title %></td>
-  <td><%= simple_format(absence.content) %></td>
+  <td><%= absence.content %></td>
   <td><%= link_to edit_absence_path(absence),  class:"btn btn-outline-info" do %>
       <i class="fas fa-file-alt"></i>
     <% end %>

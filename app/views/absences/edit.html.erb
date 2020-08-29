@@ -1,15 +1,14 @@
-<div class="container border p-3">
-  <h1>編集フォーム</h1>
+<div class="container border p-3 my-5">
+  <h1>欠席届け編集フォーム</h1>
   <%= form_with model: @absence, local: true do |form| %>
     <div class="field">
       <%= form.label :date , "日付"%>
-      <%= form.text_field :date, id: "absence-date" %>
     </div>
+    <%= form.text_field :date, id: "absence-edit-date", value: @absence.date %>
     <div class="field">
       <%= form.label :title ,"理由"%>
       <%= form.select :title, @absence_list, {}, class: "custom-select" %>
     </div>
-    <% binding.pry %>
     <div class="field">
       <%= form.label :content,"症状" %>
       <%= form.rich_text_area :content %>
