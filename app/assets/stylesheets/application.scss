@@ -12,6 +12,12 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
+// 共通
+
+body {
+  padding-top: 56px;
+}
+
 // ログイン画面
 
 .container-login {
