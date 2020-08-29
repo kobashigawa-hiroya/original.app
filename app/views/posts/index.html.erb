@@ -1,32 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="#">やんばる保育園</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to "お便り帳", posts_path, class: 'navbar-brand' %>
-        <i class="fas fa-envelope-open-text"></i>
-      </li>
-      <li class="nav-item active">
-        <%= link_to "お問合せ", contacts_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "献立", menus_path, class: 'navbar-brand' %>
-      </li>
-      <li class="nav-item active">
-        <%= button_to "登園", welcomtimes_path, name: 'garden', class:"navbar-brand", method: :post %>
-      </li>
-      <li class="nav-item active">
-        <%= button_to "降園", welcomtimes_path, name: 'garden', class:"navbar-brand", method: :post %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to 'ログアウト', destroy_app_session_path, method: :delete, class: 'nav-link',data: { confirm: "ログアウトしますか？" }  %>
-      </li>
-    </ul>
-  </div>
-</nav>
 <p class="my-4"></p>
 <div class="container-login" style="max-width: 1200px;">
   <%= render 'shared/flash_messages' %>
@@ -34,18 +5,92 @@
   <div class="d-flex justify-content-end ">
     <div class="p-2 "><%= render 'absence' %></div>
     <div class="p-2 "><%= render 'saturday_application' %></div>
-  </div>
-  <div id="posts">
-    <div class="row">
-      <%= render @posts %>
+    <!-- Button trigger modal -->
+    <div class="p-2 ">
+      <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#absence-modal">
+        欠席届一覧
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="absence-modal" tabindex="-1" role="dialog" aria-labelledby="absence-title-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="absence-title-modal">欠席届一覧</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col2">日付</th>
+                    <th scope="col2">症状</th>
+                    <th scope="col2">詳細</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render @absences %>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmztLc7bq-_cnBnO">お知らせ</a>
-    <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmqEuLo-juA4N6oZ">お知らせ２</a>
-    <%= paginate @posts %>
-    <p>年間行事</p>
+    <!-- Button trigger modal -->
+    <div class="p-2 ">
+      <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#saturday-index-modal">
+        土曜申請一覧
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="saturday-index-modal" tabindex="-1" role="dialog" aria-labelledby="saturdayTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="saturdayTitle">土曜申請一覧</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">日付</th>
+                    <th scope="col">理由</th>
+                    <th scope="col">登園時間</th>
+                    <th scope="col">お迎え時間</th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <%= render @saturday_applications %>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="posts">
+      <div class="row">
+        <%= render @posts %>
+      </div>
+      <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmztLc7bq-_cnBnO">お知らせ</a>
+      <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmqEuLo-juA4N6oZ">お知らせ２</a>
+      <%= paginate @posts %>
+      <p>年間行事</p>
+    </div>
+    <div class="googleCalendar">
+      <iframe src="https://calendar.google.com/calendar/embed?src=3v7llda6u6j80rvvjvludk244k%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
   </div>
-  <div class="googleCalendar">
-    <iframe src="https://calendar.google.com/calendar/embed?src=3v7llda6u6j80rvvjvludk244k%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-  </div>
-</div>
 </div>

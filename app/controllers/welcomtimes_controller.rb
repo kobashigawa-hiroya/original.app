@@ -2,9 +2,9 @@ class WelcomtimesController < ApplicationController
   def create
     current_app.welcom_times.create!(time: Time.current, name: params[:garden])
     if params[:garden] == "登園"
-      flash[:notice] = Time.current
+      flash[:notice] = "#{l Time.current}   登園しました！！！"
     else
-      flash[:alert] = Time.current
+      flash[:alert] = "#{l Time.current} 降園しました！！！"
     end
     redirect_to posts_path
   end

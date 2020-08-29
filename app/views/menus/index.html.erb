@@ -1,7 +1,9 @@
-<div class="container-login" style="max-width: 1200px;">
-  <h1>献立一覧</h1>
-  <div class="row">
-    <%= render @menus %>
+<div class="container border p-3 my-5">
+  <div class="container-login" style="max-width: 1200px;">
+    <h1>献立一覧</h1>
+    <div class="row">
+      <%= render @menus %>
+    </div>
   </div>
+  <%= paginate @menus %>
 </div>
-<%= paginate @menus %>

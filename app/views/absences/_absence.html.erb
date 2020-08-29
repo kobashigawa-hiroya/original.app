@@ -1,0 +1,11 @@
+<tr>
+  <td><%= l absence.date, format: :long %></td>
+  <td><%= absence.title %></td>
+  <td><%= absence.content %></td>
+  <td><%= link_to edit_absence_path(absence),  class:"btn btn-outline-info" do %>
+      <i class="fas fa-file-alt"></i>
+    <% end %>
+    <%= link_to absence, class: 'btn btn-primary', method: :delete, data: { confirm: "削除しますか？"} do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %></td>
+</tr>

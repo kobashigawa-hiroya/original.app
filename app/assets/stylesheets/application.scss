@@ -12,6 +12,12 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
+// 共通
+
+body {
+  padding-top: 56px;
+}
+
 // ログイン画面
 
 .container-login {
@@ -156,8 +162,16 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   box-shadow: 0 0 4px #aaa inset;
 }
 
-.posts {
-  background-image: url("/images/保育園写真.png");
-  height: 800px;
-  background-size: cover;
+// flatpickr(曜日の色)
+
+/* 日曜日：赤 */
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(7n),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
+  color: red;
+}
+
+/* 土曜日：青 */
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(6),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n - 1) {
+  color: blue;
 }
