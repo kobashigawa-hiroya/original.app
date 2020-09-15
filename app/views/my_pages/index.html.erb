@@ -1,0 +1,18 @@
+<h1>投稿一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <% @mypages.each.with_index(1) do |mypage, i| %>
+        <th scope="col"><%= i %></th>
+        <th scope="col"><%= my_page.title %></th>
+        <th scope="col"><%= my_page.image %></th>
+        <%= image_tag mypage.image_url(:thumb) %>
+      </tr>
+    <% end %>
+  </thead>
+</table>
+<tbody>
+  <%= link_to "編集", edit_my_page_path(@mypages) %>
+  <%# <%= link_to "削除", my_page_path, method: :delete, data: { confirm: "削除しますか?" } %>
+</tbody>
+</table>

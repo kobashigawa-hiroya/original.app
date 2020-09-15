@@ -1,0 +1,5 @@
+<%= form_with model: current_app, url: my_page_path, method: :patch, local: true do |f| %>
+  <p><%= f.label :title, "タイトル" %> <%= f.text_field :title %></p>
+  <p><%= f.label :image, "画像" %> <%= f.file_field :image, accept: "image/png,image/jpeg,image/gif" %></p>
+  <p><%= f.submit "送信" %></p>
+<% end %>

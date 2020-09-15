@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :absences, only: [:index, :create, :new, :destroy, :update, :edit]
   resources :saturday_applications, only: [:index, :create, :new, :destroy, :update, :edit]
+  resource :my_page
 end

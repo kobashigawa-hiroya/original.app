@@ -2,6 +2,8 @@
 <div class="container-login" style="max-width: 1200px;">
   <%= render 'shared/flash_messages' %>
   <hr>
+  <p><%= current_app.title %></p>
+  <%= image_tag current_app.image_url(:thumb) %>
   <div class="d-flex justify-content-end ">
     <div class="p-2 "><%= render 'absence' %></div>
     <div class="p-2 "><%= render 'saturday_application' %></div>
@@ -83,6 +85,7 @@
     <div id="posts">
       <div class="row">
         <%= render @posts %>
+        <%= link_to "プロフィール", edit_my_page_path %>
       </div>
       <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmztLc7bq-_cnBnO">お知らせ</a>
       <a href="https://1drv.ms/w/s!AmbzeXYYggEqjmqEuLo-juA4N6oZ">お知らせ２</a>
