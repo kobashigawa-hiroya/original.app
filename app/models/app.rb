@@ -11,4 +11,7 @@ class App < ApplicationRecord
   # :recoverable,
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
+  has_one_attached :image
+
+  mount_uploader :image, ImageUploader
 end
