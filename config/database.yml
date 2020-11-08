@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: original_app_sample_production
-  username: original_app_sample
-  password: <%= ENV['ORIGINAL_APP_SAMPLE_DATABASE_PASSWORD'] %>
+  database: letter_book_production
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
