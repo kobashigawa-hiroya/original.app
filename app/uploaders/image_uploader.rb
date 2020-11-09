@@ -1,10 +1,10 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   storage :file
-  process convert: "jpg"
-  # 保存するディレクトリ名
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
   end
 
   # thumb バージョン(width 400px x height 200px)
