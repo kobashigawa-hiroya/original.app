@@ -37,6 +37,7 @@ gem "jquery-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
+gem "fog-aws"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -56,7 +57,6 @@ group :development do
   gem "capistrano-rbenv", "~> 2.2"
   gem "capistrano-rbenv-vars", "~> 0.1"
   gem "capistrano3-puma"
-  gem "fog-aws"
 end
 
 group :test do
