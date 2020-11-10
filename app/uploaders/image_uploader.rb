@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    "no image.jpg"
+    ActionController::Base.helpers.asset_path([version_name, "no_image.jpg"].compact.join('_'))
   end
 
   # 変換したファイルのファイル名の規則
