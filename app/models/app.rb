@@ -14,4 +14,10 @@ class App < ApplicationRecord
   has_one_attached :image
 
   mount_uploader :image, ImageUploader
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |app|
+      app.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

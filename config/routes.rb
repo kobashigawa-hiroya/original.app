@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :texts
-  devise_for :apps
+  devise_for :apps, controllers: {
+    registrations: 'apps/registrations',
+    passwords: 'apps/passwords'
+  }  
+  devise_scope :app do
+    post 'apps/guest_sign_in', to: 'apps/sessions#new_guest'
+  end
   # get "homes/index"
   root "posts#index"
   resources :menus
