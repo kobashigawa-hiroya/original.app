@@ -12,7 +12,6 @@ https://letter-book.work/
 
 ![スクリーンショット 2020-08-23 23 10 37](https://user-images.githubusercontent.com/56257230/106136828-2a30a680-61ad-11eb-8dbd-03a04b66d58f.PNG)
 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
 # 工夫したところ
 
