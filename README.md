@@ -1,4 +1,4 @@
-# Letter Book（リポジトリ/プロジェクト/OSSなどの名前）
+# Letter Book
 
 
 ```
