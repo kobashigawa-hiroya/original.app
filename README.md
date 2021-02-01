@@ -7,6 +7,17 @@
 
 ```
 
+# 動作環境
+
+
+- ruby 2.6.6
+- Rails 6.0.3.2
+- JavaScript 
+- jQuery
+### データベース 
+- PostgreSQL
+
+
 # DEMO
 https://letter-book.work/
 
@@ -33,54 +44,47 @@ https://letter-book.work/
 
 
 ### プロフィール画像
-![プロフィール](https://user-images.githubusercontent.com/56257230/106153729-33783e00-61c2-11eb-90ff-99568c53590a.gif)
 - 『プロフィール』クリックし、プロフィール変更可能
+![プロフィール](https://user-images.githubusercontent.com/56257230/106153729-33783e00-61c2-11eb-90ff-99568c53590a.gif)
+
 
 ### お便り帳返信
-![お便り帳返信](https://user-images.githubusercontent.com/56257230/106139840-4a626480-61b1-11eb-8ff6-c036a2fb0433.gif)
 - 保育園での様子 → 家庭での様子（検温 家庭での様子を記入） → 投稿 <br>
 #忙しいときは『ニコちゃんマーク』押すと、『見ました！』印でリアクション）
 
+![お便り帳返信](https://user-images.githubusercontent.com/56257230/106139840-4a626480-61b1-11eb-8ff6-c036a2fb0433.gif)
+
 ### 登校時間＆降園時間をワンクリックで
-![登校](https://user-images.githubusercontent.com/56257230/106141053-f193cb80-61b2-11eb-9c31-9f1dd1fb7e62.gif)
 - "登園"or"降園"を押すと押した時間を取ってきて表示！ 
+![登校](https://user-images.githubusercontent.com/56257230/106141053-f193cb80-61b2-11eb-9c31-9f1dd1fb7e62.gif)
 
 ### 土曜申請書
-![土曜申請](https://user-images.githubusercontent.com/56257230/106142076-5d2a6880-61b4-11eb-9ad5-3eee07173c66.gif)
 - 『土曜申請』をクリックし、1,日付 2,時間 3,理由 入力する
+![土曜申請](https://user-images.githubusercontent.com/56257230/106142076-5d2a6880-61b4-11eb-9ad5-3eee07173c66.gif)
 
 ![土曜申請一覧](https://user-images.githubusercontent.com/56257230/106142543-f6597f00-61b4-11eb-8b20-e2637b47a2d9.gif)
 - 『土曜申請一覧』で一覧を見たり、内容編集＆削除出来る
 
 ### 欠席届け
-![欠席](https://user-images.githubusercontent.com/56257230/106143123-b21aae80-61b5-11eb-8cb1-9843fd01c716.gif)
 - 『欠席届け』をクリックし、1,日付 2,時間 3,症状　入力する
+![欠席](https://user-images.githubusercontent.com/56257230/106143123-b21aae80-61b5-11eb-8cb1-9843fd01c716.gif)
+
 
 ![欠席編集](https://user-images.githubusercontent.com/56257230/106143527-3d943f80-61b6-11eb-847a-ba36d5d50a7d.gif)
 - 欠席届けも同じく一覧見たり、編集＆削除可能
 
-### 献立表
-![献立](https://user-images.githubusercontent.com/56257230/106152050-5a357500-61c0-11eb-8fdd-1ee403769fb8.gif)
+### 献立
 - Topページから 『献立』クリック → 『詳細』（献立の詳細） → 『おやつ』（おやつの詳細）
+![献立](https://user-images.githubusercontent.com/56257230/106152050-5a357500-61c0-11eb-8fdd-1ee403769fb8.gif)
 
 ### お問合せ
-![お問合せ](https://user-images.githubusercontent.com/56257230/106152919-522a0500-61c1-11eb-932e-aa2ed1157b92.gif)
 - Topページから 『お問合せ』クリック → 『お問合せform』 → お問合せ内容を入力 #管理者画面とチャット感覚でやりとりが可能 
+![お問合せ](https://user-images.githubusercontent.com/56257230/106152919-522a0500-61c1-11eb-932e-aa2ed1157b92.gif)
 
 ### お知らせ
-![お知らせ](https://user-images.githubusercontent.com/56257230/106154607-21e36600-61c3-11eb-9dd3-d7f9a3e4bd92.gif)
 - Topページから 『お知らせ』クリック → 保育園からのお知らせ、配布物も"iframe"を使いwordで資料、手紙等を共有し配布漏れ、印刷物のコスト削減。
+![お知らせ](https://user-images.githubusercontent.com/56257230/106154607-21e36600-61c3-11eb-9dd3-d7f9a3e4bd92.gif)
 
-
-# 動作環境
-
-
-- ruby 2.6.6
-- Rails 6.0.3.2
-- JavaScript 
-- jQuery
-### データベース 
-- PostgreSQL
 
 ### absencesテーブル
 |Column|Type| Options |
