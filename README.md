@@ -76,7 +76,9 @@ https://letter-book.work/
 ![欠席](https://user-images.githubusercontent.com/56257230/106143123-b21aae80-61b5-11eb-8cb1-9843fd01c716.gif)
 - 『欠席届け』をクリックし、1,日付 2,時間 3,症状　入力する
 
+
 ![欠席編集](https://user-images.githubusercontent.com/56257230/106143527-3d943f80-61b6-11eb-847a-ba36d5d50a7d.gif)
+- ✏︎欠席届け編集
 - 欠席届けも同じく一覧見たり、編集＆削除可能
 
 ### 献立
