@@ -129,7 +129,7 @@ GEM
       devise (>= 4.7.1)
     erubi (1.9.0)
     excon (0.64.0)
-    ffi (1.13.1)
+    ffi (1.15.5)
     fog-aws (2.0.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -156,7 +156,7 @@ GEM
       activesupport (>= 4.1)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    image_processing (1.11.0)
+    image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
     inherited_resources (1.11.0)
@@ -273,8 +273,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rmagick (4.1.2)
-    ruby-vips (2.0.17)
-      ffi (~> 1.9)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -351,7 +351,7 @@ DEPENDENCIES
   devise
   devise-i18n
   fog-aws
-  image_processing (~> 1.2)
+  image_processing (~> 1.12)
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails
